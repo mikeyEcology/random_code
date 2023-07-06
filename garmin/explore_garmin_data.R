@@ -40,7 +40,7 @@ df[, (start_index + 1):ncol(df)] <- lapply(df[, (start_index + 1):ncol(df)], as.
 #- filter the data
 # maybe I only want to focus on runs
 # what types of activities have I done?
-unqiue(df$activity_type)
+unique(df$activity_type)
 
 # filter data by runs only
 df <- df |>
@@ -55,6 +55,12 @@ df <- df |>
     distance >= min_distance_to_include
   )
 
+# I have one run where my HR was 0, not sure why, but lets exclude it
+min_hr_to_include <- 10
+df <- df |>
+  dplyr::filter(
+    avg_hr > min_hr_to_include
+  )
 
 #------------------------------------
 # plot some data using this approach
@@ -76,6 +82,14 @@ colnames(df)
 # plot a histogram, e.g., what does my stride length look like?
 column_name <- "avg_stride_length"
 #column_name <- "total_ascent"
+
+ggplot(df, aes_string(x = column_name)) +
+  geom_histogram()
+#------------------------------------
+
+#------------------------------------
+# another histogram: cadence
+column_name <- "avg_run_cadence"
 
 ggplot(df, aes_string(x = column_name)) +
   geom_histogram()
@@ -122,7 +136,7 @@ ggplot(df, aes_string(x = x_variable, y = y_variable)) +
 #-----------------------------------
 
 
-# more plots
+# more plots.
 x_variable <- "total_ascent"
 y_variable <- "total_descent"
 # Create a scatter plot with best fit line
