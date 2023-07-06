@@ -93,3 +93,39 @@ ggplot(df, aes_string(x = x_variable, y = y_variable)) +
   geom_smooth(method = "lm", se = FALSE, lty = 2)
 
 #-----------------------------------
+
+#------------------------------------
+# make another scatter plot
+# how does distance affect my stride length?
+x_variable <- "distance"
+y_variable <- "avg_stride_length"
+
+# Create a scatter plot with best fit line
+ggplot(df, aes_string(x = x_variable, y = y_variable)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, lty = 2)
+
+#-----------------------------------
+
+
+#------------------------------------
+# make another scatter plot
+# how does cadence affect my stride length?
+x_variable <- "avg_run_cadence"
+y_variable <- "avg_stride_length"
+
+# Create a scatter plot with best fit line
+ggplot(df, aes_string(x = x_variable, y = y_variable)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, lty = 2)
+
+#-----------------------------------
+
+
+# more plots
+x_variable <- "total_ascent"
+y_variable <- "total_descent"
+# Create a scatter plot with best fit line
+ggplot(df, aes_string(x = x_variable, y = y_variable)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, lty = 2)
