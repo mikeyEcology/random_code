@@ -22,4 +22,8 @@ This should be the hardest part of the process. Copy and paste your downloads fo
 
 ### Look at variables of interest
 I selected some ideas for `x_variable` and `y_variable`, but you can modify these as you want. To see all potential variables, type `colnames(df)` into the console. 
+\
 
+
+# Do you want to use AI to advance your business?
+See how Quantitative Science Consulting, LLC (QSC) can help. Find us at [QSC.earth](https://www.qsc.earth/) and on [Linkedin](https://www.linkedin.com/company/quantitative-science-consulting/). This tutorial and script were created by QSC Scientists. 
